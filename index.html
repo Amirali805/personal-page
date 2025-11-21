@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+     <meta charset="UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <title>سایت فیلم</title>
+	 <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+     />
+	 <style>
+	 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+	 *{
+	     padding: 0;
+		 margin: 0;
+		 box-sizing: border-box;
+		 font-family: Vazirmatn, sans-serif;
+	 }
+	 html{
+	     overflow-x: hidden;
+	 }
+	 body{
+	     width: 100%;
+		 height: 100vh;
+		 overflow-x: hidden;
+		 background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+	 }
+	 nav{
+	     width: 100%;
+		 height: 10vh;
+		 position: sticky;
+	 }
+	 .nav-container{
+	     width: 100%;
+		 height: 100%;
+		 display: flex;
+		 justify-content: space-around;
+		 align-items: center;
+	 }
+	 .logo{
+	     color: black;
+		 font-size: 2rem;
+		 font-weight: bolder;
+	 }
+	 .logo span{
+	     color: rgb(109, 67, 0);
+		 text-shadow: 0 0 10px rgb(109, 67, 0);
+	 }
+	 .menu_bars,
+	 .icon{
+	     cursor: pointer;
+		 position: absolute;
+		 right: 15px;
+		 top: 10px;
+		 color: black;
+		 font-size: 2rem;
+		 display: none;
+	 }
+	   .nav-container .links{
+	     display: flex;
+		 gap: 3rem;
+		 align-items: center;
+	 }
+	 .links a{
+	     position: relative;
+		 font-size: 1rem;
+		 color: black;
+		 text-decoration: none;
+		 font-weight: 500;
+		 transition: 0.3s linear;
+	 }
+	 .links a::before{
+	     position: absolute;
+		 content: "";
+		 bottom: -3px;
+		 right: 0;
+		 width: 0%;
+		 height: 3px;
+		 background-color: rgb(109, 67, 0);
+		 transition: 0.2s linear;
+	 }
+	 .links a:hover:before{
+	     width: 100%;
+	 }
+	 .content-btn{
+	     background-color: transparent;
+		 padding: 5px 20px;
+		 border-radius: 20px;
+		 border: 2px solid rgb(109, 67, 0);
+		 transition: 0.3s linear;
+	 }
+	 .content-btn a{
+	     color: #fff;
+		 transition: 0.3s linear;
+	 }
+	 .content-btn a:hover{
+	     color: rgb(109, 67, 0);
+	 }
+	 .content-btn a:hover,
+	 .content-btn:hover{
+	     background-color: rgb(109, 67, 0);
+		 color: #fff;
+		 transition: 0.3s linear;
+	 }
+	 /*section*/
+	 section{
+	     width: 100%;
+		 height: 100%;
+	 }
+	 .main-container{
+	     width: 100%;
+		 height: 100%;
+		 display: flex;
+		 justify-content: space-evenly;
+		 align-items: center;
+	 }
+	 .image{
+	     z-index: -1;
+		 width: 45%;
+	 }
+	 .image img{
+	     width: 100%;
+	 }
+	 .content{
+	     color: black;
+		 width: 40%;
+		 min-height: 100px;
+	 }
+	 .content h1{
+	     font-size: clamp(1rem , 2rem + 5vw , 3rem);
+	 }
+	 .content h1 span{
+	     color: rgb(109, 67, 0);
+		 text-shadow: 0 0 10px rgb(109, 67, 0);
+	 }
+	 .typewriter{
+	     font-weight: 600;
+		 font-size: clamp(1rem, 1rem + 5vw, 2rem);
+		 overflow: hidden;
+	 }
+	 .typewriter span{
+	     color: rgb(109, 67, 0);
+		 font-size: 2.5rem;
+		 text-shadow: 0 0 10px rgb(109, 67, 0);
+		 border-left: 2px solid black;
+		 padding-left: 4px;
+	 }
+	 .content p{
+	     font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+		 margin: 10px 0;
+	 }
+	 .social-links i{
+	     display: inline-flex;
+		 justify-content: center;
+		 align-items: center;
+		 width: 3rem;
+		 height: 3rem;
+		 background-color: transparent;
+		 border: 0.2rem solid rgb(109, 67, 0);
+		 border-radius: 50%;
+		 margin: 5px 10px;
+		 font-size: 1.5rem;
+		 color: rgb(109, 67, 0);
+		 transition: 0.2s linear;
+	 }
+	 .social-links i:hover{
+	     scale: 1.2;
+		 color: #fff;
+		 background-color: rgb(109, 67, 0);
+		 filter: drop-shadow(0 0 10px rgb(109, 67, 0));
+	 }
+	 .btn button{
+	     width: 40%;
+		 height: 6vh;
+		 margin: 30px;
+		 background-color: rgb(109, 67, 0);
+		 color: #fff;
+		 border: none;
+		 outline: none;
+		 font-size: 100%;
+		 font-weight: 700;
+		 border-radius: 5px;
+		 transition: 0.2s linear;
+		 cursor: pointer;
+	 }
+	 .btn button:hover{
+	     scale: 1.1;
+		 color: rgb(109, 67, 0);
+		 border: 2px solid rgb(109, 67, 0);
+		 background-color: transparent;
+		 font-weight: 700;
+		 box-shadow: 0 0 40px rgb(109, 67, 0);
+	 }
+	 
+	 .dropdown{
+	     z-index: 100;
+		 position: absolute;
+		 top: 0;
+		 transform: translateY(-500px);
+		 width: 100%;
+		 height: auto;
+		 backdrop-filter: brightness(40%) blur(3px);
+		 box-shadow: 0 0 20px black;
+		 transition: 0.3s linear;
+	 }
+	 .dropdown a{
+	     color: #fff;
+		 display: flex;
+		 text-decoration: none;
+		 justify-content: center;
+		 padding: 15px 0;
+		 align-items: center;
+		 transition: 0.3s linear;
+	 }
+	 .dropdown a:hover{
+	     background-color: rgb(109, 67, 0);
+	 }
+	 
+	 @media (max-width: 884px){
+	     body{
+		     overflow-y:visible;
+		 }
+		 nav .logo{
+		     position: absolute;
+			 top: 16px;
+			 left: 15px;
+			 font-size: 1.5rem;
+		 }
+		 .main-container{
+		     display: flex;
+			 flex-direction: column;
+		 }
+		 .nav-container .links{
+		     display: none;
+		 }
+		 .menu_bars, 
+		 .icon{
+		     display: block;
+		 }
+		 .content{
+		     width: 80%;
+		 }
+		 .social-links i{
+		     width: 2.5rem;
+			 height: 2.5rem;
+			 font-size: 1.5rem;
+		 }
+		 .icon{
+		     color: #fff;
+		 }
+		 .image{
+		     width: 80%;
+			 margin-bottom: 0;
+		 }
+		 
+	 }
+	 </style>
+</head>
+<body>
+     <nav>
+	     <div class="nav-container">
+		  <div class="links">
+		   <div class="link content-btn">
+		    <a href="#">تماس با ما</a>
+		   </div>
+		   <div class="link"><a href="#">خانه</a></div>
+		   <div class="link"><a href="#">درباره من</a></div>
+		   <div class="link"><a href="#">مهارات</a></div>
+		   <div class="link"><a href="#">خدمات</a></div>
+		   <div class="link"><a href="#">وبلاگ</a></div>
+		  </div>
+		  <div class="logo">
+		     <span>مریم</span>
+		  </div>
+		  <i class="ri-menu-fill menu_bars" onclick="menu_bars()"></i>
+		 </div>
+		 <div class="dropdown">
+		     <div class="links">
+			     <a href="#">خانه</a>
+				 <a href="#">درباره من</a>
+				 <a href="#">مهارت ها</a>
+				 <a href="#">خدمات</a>
+				 <a href="#">وبلاگ</a>
+				 <a href="#">تماس با من</a>
+				 <i class="ri-close-large-line icon" onclick="cancel()"></i>
+			 </div>
+		 </div>
+	 </nav>
+	 <section>
+	     <div class="main-container">
+		     <div class="image right">
+			     <img src="image/main.png" alt="user">
+			 </div>
+			 <div class="content">
+			     <h1 class="left">
+				  سلام ! من <span>مریم</span> 
+				  هستم
+				 </h1>
+				 <div class="typewriter right">
+				     من یک
+				 <span id="typeing"></span>
+				 هستم
+			</div>
+			 <div>
+			 <p class="link">
+			 با پرتال می‌توانید به ساده‌ترین و سریع‌ترین شکل ممکن، یک وب سایت شخصی برای خودتان راه‌اندازی ک
+			 نید و افکار، ایده‌ها و دانش خود را با دیگران به اشتراک بگذارید. ما تمام آن
+			 چه برای موفقیت برند شخصی شما لازم است را در اختیارتان می‌گذاریم.
+			 </p>
+			 <div class="social-links">
+			     <a href="#"><i class="ri-instagram-line"></i></a>
+				 <a href="#"><i class="ri-linkedin-line"></i></a>
+				 <a href="#"><i class="ri-youtube-fill"></i></a>
+				 <a href="#"><i class="ri-telegram-line"></i></a>
+			 </div>
+			 <div class="btn left">
+			     <button>دانلود رزومه</button>
+			 </div>
+		 </div>
+	 </section>
+	 <script src="https://unpkg.com/scrollreveal"></script>
+	 <script>
+	     const words = [
+		 "توسعه دهنده وب",
+		 "طراح رابط کاربری",
+		 "تولید کننده محتوای ویدیویی",
+		 "سلام دوستان عزیز خوش امدید"
+		 ];
+		 
+		 let i = 0;
+		 let j = 0;
+		 let isDeleting = false;
+		 let currentWord = "";
+		 let typeingSpan = document.getElementById("typeing");
+		 
+		 function type(){
+		     currentWord = words[i];
+			 if (isDeleting){
+			     typeingSpan.textContent = currentWord.substring(0, j--);
+			 }else {
+			     typeingSpan.textContent = currentWord.substring(0, j++);
+			 }
+			 
+			 if (!isDeleting && j === currentWord.length){
+			     isDeleting = true;
+				 setTimeout(type, 1500);
+			 } else if (isDeleting && j === 0){
+			     isDeleting = false;
+				 i = (i + 1) % words.length;
+				 setTimeout(type, 300);
+			 } else {
+			     setTimeout(type, isDeleting ? 50 : 100);
+			 }
+		   }
+		   
+		   document.addEventListener("DOMContentLoaded", type);
+		   
+		   function menu_bars(){
+		     const navbar = document.querySelector(".dropdown");
+			 navbar.style.transform = "translateY(0px)";
+		   }
+		   function cancel(){
+		     const navbar = document.querySelector(".dropdown");
+			 navbar.style.transform = "translateY(-500px)";
+		   }
+		   
+		   ScrollReveal().reveal(".link", {
+		     origin: "bottom",
+			 distance: "50px",
+			 duration: 1000,
+			 interval: 600,
+			 });
+		   ScrollReveal().reveal(".scroll-link a", {
+			 origin: "top",
+			 distance: "50px",
+			 duration: 1000,
+			 interval: 300,
+			 });
+		   ScrollReveal().reveal(".left", {
+			 origin: "left",
+			 distance: "60px",
+			 duration: 1000,
+			 interval: 100,
+			 });
+		   ScrollReveal().reveal(".right", {
+			 origin: "right",
+			 distance: "60px",
+			 duration: 1000,
+			 interval: 100,
+			 });
+		   ScrollReveal().reveal(".logo", {
+			 scale: 0.85,
+			 duration: 1000,
+			 delay: 100,
+			 });
+			 
+			 document.querySelectorAll('[class*="delay-"]').forEach((el) => {
+			     const delay = Number(el.className.match(/delay-(\d)/)?.[1] || 0) * 200;
+				 el.style.setProperty("--sr-delay", delay + "ms");
+			 });
+	 </script>
+</body>
+</html>
